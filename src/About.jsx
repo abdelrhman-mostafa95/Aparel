@@ -1,11 +1,9 @@
 function About() {
   return (
     <div>
-      {/* About Section */}
       <section className="bg-gradient-to-b from-gray-100 to-white">
         <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
           <div className="bg-white/60 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            {/* Text Section */}
             <div className="p-8 md:p-12 lg:p-16">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
                 Why Choose Us
@@ -34,8 +32,6 @@ function About() {
               <p className="text-black font-semibold mb-6">
                 4,000+ Students • 49 Teachers • 12 Awards
               </p>
-
-              {/* Buttons */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-4">
                 <a
                   href="#shop"
@@ -51,8 +47,6 @@ function About() {
                   Learn more
                 </a>
               </div>
-
-              {/* Features */}
               <ul className="mt-6 flex flex-wrap gap-4 text-sm text-gray-500">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-green-400 inline-block" />
@@ -68,8 +62,6 @@ function About() {
                 </li>
               </ul>
             </div>
-
-            {/* Image Section */}
             <div className="relative">
               <div className="absolute -left-24 -top-12 w-64 h-64 bg-gradient-to-r from-indigo-300 to-purple-300 rounded-full blur-3xl opacity-40 pointer-events-none hidden lg:block"></div>
 
@@ -85,10 +77,8 @@ function About() {
         </div>
       </section>
 
-      {/* Team Section */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          {/* Title */}
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
             Our Team
           </h2>
@@ -97,9 +87,7 @@ function About() {
             Vokalia and Consonantia, there live the blind texts.
           </p>
 
-          {/* Team Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {/* Card 1 */}
             <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
               <img
                 src="person_1.jpg"
@@ -118,7 +106,6 @@ function About() {
               </div>
             </div>
 
-            {/* Card 2 */}
             <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
               <img
                 src="person_2.jpg"
@@ -139,7 +126,6 @@ function About() {
               </div>
             </div>
 
-            {/* Card 3 */}
             <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
               <img
                 src="person_3.jpg"

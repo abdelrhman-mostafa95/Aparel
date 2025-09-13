@@ -1,8 +1,6 @@
-import { NavLink } from "react-router-dom";
-
 function Footer() {
   return (
-    <footer className="bg-white">
+    <footer className="bg-white my-20">
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <h3 className="text-lg font-semibold mb-4">Help</h3>
@@ -76,10 +74,7 @@ function Footer() {
       </div>
       <div className=" py-6 text-center text-gray-500 text-sm">
         Copyright ©2025 All rights reserved | This template is made with
-        <a href="https://colorlib.com" className="text-blue-600">
-          {" "}
-          Abdelrahman Mostafa
-        </a>
+        <span className="text-red-500"> Abdelrahman Mostafa</span>
       </div>
     </footer>
   );

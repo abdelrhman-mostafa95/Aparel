@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom"; 
 
 function Categories() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  // Get categories
+  
   async function getCategories() {
     const res = await fetch("https://dummyjson.com/products/categories");
     const data = await res.json();
     setCategories(data);
   }
 
-  // Get products (all or by category)
   async function getProducts(category = "") {
     const url = category
       ? `https://dummyjson.com/products/category/${category}`
@@ -24,10 +24,10 @@ function Categories() {
 
   useEffect(() => {
     getCategories();
-    getProducts(); // default load all products
+    getProducts(); 
   }, []);
 
-  // when select category
+  
   function handleCategoryClick(categorySlug) {
     setSelectedCategory(categorySlug);
     getProducts(categorySlug);
@@ -35,7 +35,7 @@ function Categories() {
 
   return (
     <div className="flex bg-gray-50 min-h-screen mt-20">
-      {/* Sidebar */}
+     
       <aside className="w-64 bg-white shadow-md p-6 border-r hidden md:block">
         <h2 className="text-xl font-bold mb-6 text-black">Categories</h2>
         <ul className="space-y-3">
@@ -68,14 +68,14 @@ function Categories() {
         </ul>
       </aside>
 
-      {/* Products */}
+      
       <main className="flex-1 p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {products.map((product) => (
           <div
             key={product.id}
             className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-5 flex flex-col h-[350px]"
           >
-            {/* الصورة */}
+          
             <div className="relative w-full h-40 flex items-center justify-center">
               <img
                 src={product.thumbnail}
@@ -89,7 +89,7 @@ function Categories() {
               </span>
             </div>
 
-            {/* النص */}
+           
             <div className="mt-4 flex flex-col flex-1">
               <h3 className="text-base font-semibold text-gray-900 line-clamp-1">
                 {product.title}
@@ -105,6 +105,13 @@ function Categories() {
                 </span>
               </div>
             </div>
+
+            <NavLink
+              to={`/productdetails/${product.id}`}
+              className="mt-3 text-sm font-medium text-indigo-600 hover:underline"
+            >
+              View Details
+            </NavLink>
           </div>
         ))}
       </main>
