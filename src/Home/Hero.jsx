@@ -11,11 +11,11 @@ export default function Hero() {
       {/* Content */}
       <div
         className="
-      absolute inset-0 
-      flex flex-col justify-center 
-      text-center md:text-left
-      px-6 md:px-20
-    "
+          absolute inset-0 
+          flex flex-col justify-center items-end
+          text-center md:text-right
+          px-6 md:px-20
+        "
       >
         <div className="max-w-lg">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900">
