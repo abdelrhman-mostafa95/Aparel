@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom"; // 👈 استورد useNavigate
 import { useDispatch, useSelector } from "react-redux";
-import { increment, decrement } from "../Slice";
+import { increment, decrement, addToCart } from "../Slice";
 
 function ProductDetails() {
   const { id } = useParams();
   const [data, setData] = useState(null);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // 👈 جهزنا الـ navigate
   const quantity = useSelector((state) => state.cart.quantity);
 
   async function getData() {
@@ -64,8 +65,14 @@ function ProductDetails() {
         </button>
       </div>
 
-      <button className="mt-6 w-full px-5 py-2 bg-yellow-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-300 transition">
-        Buy Now
+      <button
+        onClick={() => {
+          dispatch(addToCart({ ...data, quantity }));
+          navigate("/cart"); 
+        }}
+        className="mt-6 w-full px-5 py-2 bg-yellow-400 text-gray-900 font-semibold rounded-lg hover:bg-yellow-300 transition"
+      >
+        Add to Cart
       </button>
     </div>
   );

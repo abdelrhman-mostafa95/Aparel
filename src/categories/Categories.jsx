@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom"; 
+import { NavLink } from "react-router-dom";
 
 function Categories() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  
   async function getCategories() {
     const res = await fetch("https://dummyjson.com/products/categories");
     const data = await res.json();
@@ -24,18 +23,17 @@ function Categories() {
 
   useEffect(() => {
     getCategories();
-    getProducts(); 
+    getProducts();
   }, []);
 
-  
   function handleCategoryClick(categorySlug) {
     setSelectedCategory(categorySlug);
     getProducts(categorySlug);
   }
 
   return (
-    <div className="flex bg-gray-50 min-h-screen mt-20">
-     
+    <div className="flex flex-col md:flex-row bg-gray-50 min-h-screen mt-20">
+      {/* Sidebar for desktop */}
       <aside className="w-64 bg-white shadow-md p-6 border-r hidden md:block">
         <h2 className="text-xl font-bold mb-6 text-black">Categories</h2>
         <ul className="space-y-3">
@@ -68,14 +66,36 @@ function Categories() {
         </ul>
       </aside>
 
-      
+      {/* Dropdown for mobile */}
+      <div className="block md:hidden p-4 bg-white shadow">
+        <label className="block text-sm font-medium text-gray-700 mb-2">
+          Categories
+        </label>
+        <select
+          value={selectedCategory}
+          onChange={(e) => handleCategoryClick(e.target.value)}
+          className="w-full border border-gray-300 rounded-lg p-2 text-gray-700"
+        >
+          <option value="">All</option>
+          {categories.map((cat) => (
+            <option
+              key={typeof cat === "string" ? cat : cat.slug}
+              value={typeof cat === "string" ? cat : cat.slug}
+            >
+              {typeof cat === "string" ? cat : cat.name}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Products */}
       <main className="flex-1 p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {products.map((product) => (
           <div
             key={product.id}
             className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition p-5 flex flex-col h-[350px]"
           >
-          
+            {/* Product Image */}
             <div className="relative w-full h-40 flex items-center justify-center">
               <img
                 src={product.thumbnail}
@@ -89,7 +109,7 @@ function Categories() {
               </span>
             </div>
 
-           
+            {/* Product Info */}
             <div className="mt-4 flex flex-col flex-1">
               <h3 className="text-base font-semibold text-gray-900 line-clamp-1">
                 {product.title}

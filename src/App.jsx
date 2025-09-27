@@ -9,6 +9,7 @@ import ProductDetails from "./categories/Productdetails";
 import FormRegister from "./Navbar/Register";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import Cart from "./Cart/Cart";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/productdetails/:id" element={<ProductDetails />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/FormRegister" element={<FormRegister />} />
           <Route path="/about" element={<About />} />
         </Routes>
