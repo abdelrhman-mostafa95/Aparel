@@ -1,12 +1,23 @@
-# React + Vite
+# 🛒 E-commerce App  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive **E-commerce web application** built with **React, Redux, and Tailwind CSS**.  
+This project provides a simple shopping experience with product listing, category filtering, product details, and a shopping cart.  
 
-Currently, two official plugins are available:
+## 🎯 Live Demo  
+[View the live site](https://ecommerce-pink-nine-47.vercel.app/)  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features  
+- 🔎 Browse and filter products by category  
+- 🛍️ View detailed information for each product  
+- 🛒 Add products to the shopping cart  
+- 📱 Fully responsive design for mobile, tablet, and desktop  
+- ⚡ Built with React + Vite for fast development  
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack  
+- **React** – Frontend framework  
+- **Redux** – State management  
+- **Tailwind CSS** – Styling & responsive design  
+- **Vite** – Fast development environment  
+- **React Router** – Navigation  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Project Structure  
